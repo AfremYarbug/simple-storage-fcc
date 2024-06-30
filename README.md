@@ -1,3 +1,65 @@
+# About the Project
+
+## Overview
+
+`SimpleStorage` is a basic smart contract implemented in Solidity, designed to store and manage a favorite number for each person. It serves as an introductory project to understand the core concepts of Solidity and Ethereum smart contract development.
+
+## Features
+
+- **Favorite Number Storage**: The contract allows users to store a favorite number.
+- **Mapping**: A dictionary (`mapping`) that associates names with favorite numbers.
+- **Dynamic Array**: A dynamic array (`People[]`) to keep track of people and their favorite numbers.
+- **Struct**: A custom `People` struct to encapsulate the data related to each person (name and favorite number).
+
+## Functions
+
+### `store(uint256 _favoriteNumber)`
+
+This function updates the `favoriteNumber` variable with the provided input.
+
+- **Parameters**: 
+  - `_favoriteNumber` (uint256): The new favorite number to be stored.
+- **Gas Usage**: This function modifies the state, hence it consumes gas.
+
+### `retrieve() public view returns (uint256)`
+
+This function returns the current value of `favoriteNumber`.
+
+- **Returns**: 
+  - `uint256`: The current favorite number.
+- **Gas Usage**: This is a view function and does not modify the state, so it does not consume gas.
+
+### `addPerson(string memory _name, uint256 _favoriteNumber)`
+
+This function adds a new person to the `people` array and updates the `nameToFavoriteNumber` mapping.
+
+- **Parameters**: 
+  - `_name` (string): The name of the person.
+  - `_favoriteNumber` (uint256): The favorite number of the person.
+- **Gas Usage**: This function modifies the state, hence it consumes gas.
+
+## Data Structures
+
+### `People` Struct
+
+The `People` struct is used to define a person with the following attributes:
+- `favoriteNumber` (uint256): The person's favorite number.
+- `name` (string): The person's name.
+
+### Mappings
+
+- `mapping(string => uint256) public nameToFavoriteNumber`: Maps each person's name to their favorite number.
+
+### Arrays
+
+- `People[] public people`: A dynamic array to store the list of people and their favorite numbers.
+
+## Usage
+
+The `SimpleStorage` contract can be deployed on the Ethereum blockchain. Once deployed, users can interact with it to store, retrieve, and manage favorite numbers associated with names. 
+
+This contract provides a fundamental understanding of Solidity's key features such as state variables, mappings, structs, dynamic arrays, and the basic syntax for writing smart contracts.
+
 # Lesson 2: [Welcome to Remix! Simple Storage](https://github.com/PatrickAlphaC/simple-storage-fcc)
 
 _[⌨️ (02:01:16) Lesson 2: Welcome to Remix! Simple Storage](https://www.youtube.com/watch?v=gyMwXuJrbJQ&t=7276s)_
